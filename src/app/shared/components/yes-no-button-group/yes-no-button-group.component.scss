@@ -1,0 +1,45 @@
+$btn-yes-color: rgb(5, 175, 5);
+$btn-no-color: red;
+
+.button-group{
+  .label{
+    margin-right: 0.5rem;
+  }
+
+  .button{
+    border: 1px solid #aeb6c6;
+    padding: 0.5rem 0.75rem;
+    margin: 0 0.1rem 0 0;
+    color: black;
+    font-weight: bold;
+    background-color: #fff;
+
+    &.btn-yes{
+      border-radius: 18px 0 0 18px;
+
+      &.btn-pressed{
+        color: #fff;
+        background-color: $btn-yes-color;
+      }
+
+      &.btn-yes:hover{
+        color: #fff;
+        background-color: $btn-yes-color;
+      }
+    }
+
+    &.btn-no{
+      border-radius: 0 18px 18px 0;
+
+      &.btn-pressed{
+        color: #fff;
+        background-color: $btn-no-color;
+      }
+
+      &.btn-no:hover{
+        color: #fff;
+        background-color: $btn-no-color;
+      }
+    }
+  }
+}
