@@ -1,3 +1,4 @@
+import { UniqueIdService } from './../../services/unique-id.service';
 import { Component, EventEmitter, Input, OnInit, Output, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -18,11 +19,14 @@ export class YesNoButtonGroupComponent implements OnInit, ControlValueAccessor {
   @Input() public value: string;
   @Input() public label = '';
   @Output() public valueChange = new EventEmitter<string>(); //para o two-way data-binding funcionar essa variável tem que ter O MESMO NOME da variável @Input value, porém com sufixo Change
+  public id: string;
   public options = YesNoBtnGroupOptions;
   public onChange = (value: string) => {};
   public onTouched = () => {};
 
-  constructor() { }
+  constructor(uniqueIdService: UniqueIdService) {
+    this.id = uniqueIdService.generateUniqueIdWithPrefix('yes-no-button-group');
+   }
 
   ngOnInit(): void {
   }

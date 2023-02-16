@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { YesNoButtonGroupModule } from './components/yes-no-button-group/yes-no-button-group.module';
 
 
-
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     YesNoButtonGroupModule
   ],
-  exports: [YesNoButtonGroupModule]
+  exports: [
+    YesNoButtonGroupModule,
+  ]
 })
 export class SharedModule { }
